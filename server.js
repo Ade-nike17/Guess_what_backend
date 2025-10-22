@@ -10,14 +10,22 @@ const GameSession = require('./models/GameSession');
 const app = express();
 const server = http.createServer(app);
 
-app.use(cors());
+app.use(cors({
+   origin: [
+    "https://puffy-year.pipeops.net",
+    "http://localhost:5173",
+    "https://guess-what-frontend-blond.vercel.app"
+  ],
+  methods: ['GET', 'POST'],
+}));
 
 // Socket.io CORS config matches same origins
 const io = new Server(server, {
   cors: {
     origin: [
     "https://puffy-year.pipeops.net",
-    "http://localhost:5173" 
+    "http://localhost:5173",
+    "https://guess-what-frontend-blond.vercel.app"
   ],
     methods: ['GET', 'POST'],
   },
