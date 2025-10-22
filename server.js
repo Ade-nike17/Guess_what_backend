@@ -10,21 +10,21 @@ const GameSession = require('./models/GameSession');
 const app = express();
 const server = http.createServer(app);
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://guess-what-frontend-blond.vercel.app',
+  'https://maxed-straw.pipeops.net',
+];
+
 app.use(cors({
-   origin: [
-    "http://localhost:5173",
-    "https://guess-what-frontend-a1l5rntsp-adenikes-projects-5435ebee.vercel.app"
-  ],
+  origin: allowedOrigins,
   methods: ['GET', 'POST'],
 }));
 
 // Socket.io CORS config matches same origins
 const io = new Server(server, {
   cors: {
-    origin: [
-    "http://localhost:5173",
-    "https://guess-what-frontend-a1l5rntsp-adenikes-projects-5435ebee.vercel.app"
-  ],
+    origin: allowedOrigins,
     methods: ['GET', 'POST'],
   },
 });
