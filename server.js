@@ -16,6 +16,7 @@ app.use(cors());
 const io = new Server(server, {
   cors: {
     origin: [
+    "https://puffy-year.pipeops.net/",
     "http://localhost:5173" 
   ],
     methods: ['GET', 'POST'],
