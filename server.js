@@ -12,9 +12,8 @@ const server = http.createServer(app);
 
 app.use(cors({
    origin: [
-    "https://puffy-year.pipeops.net",
     "http://localhost:5173",
-    "https://guess-what-frontend-blond.vercel.app"
+    "https://guess-what-frontend-a1l5rntsp-adenikes-projects-5435ebee.vercel.app"
   ],
   methods: ['GET', 'POST'],
 }));
@@ -23,9 +22,8 @@ app.use(cors({
 const io = new Server(server, {
   cors: {
     origin: [
-    "https://puffy-year.pipeops.net",
     "http://localhost:5173",
-    "https://guess-what-frontend-blond.vercel.app"
+    "https://guess-what-frontend-a1l5rntsp-adenikes-projects-5435ebee.vercel.app"
   ],
     methods: ['GET', 'POST'],
   },
